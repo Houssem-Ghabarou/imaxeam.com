@@ -1,24 +1,88 @@
 @import "tailwindcss";
+/* @import "tailwindcss" prefix(tw); */
 
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-orange-100: #f26822;
+  --color-white-100: #ffffff;
+  --color-black-100: #292930;
+}
+
+@layer components {
+  .button-custom-nav {
+    @apply cursor-pointer relative;
+  }
+  .button-custom-nav::after {
+    @apply content-[''] absolute w-0 h-[1px] bottom-[-3px] left-0 bg-[var(--color-white-100)] transition-[width] duration-300 ease-in-out;
+  }
+  .button-custom-nav:hover::after {
+    @apply w-full;
+  }
+  .li-custom-nav {
+    @apply cursor-pointer relative;
+  }
+  .li-custom-nav::after {
+    @apply content-[''] absolute w-0 h-[3px] bottom-[-3px] left-0 bg-[var(--color-orange-100)] transition-[width] duration-300 ease-in-out;
+  }
+  .li-custom-nav:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Add the following Tailwind styles in globals.css or a custom CSS file */
+@layer utilities {
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #292930;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
+  font-size: medium;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 58px;
+}
+
+p {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+p strong {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 35px;
+  color: var(--color-orange-100);
 }
