@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared-components/header";
+import Footer from "@/components/shared-components/footer";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Imaxeam.com",
-  description: "Imaxeam's personal website",
+  title: "Home - iMaxeam.com",
+  description:
+    "IBM Maximo is Our Game Elevate your Maximo experience with iMaxeam's innovative solutions, designed to empower clients globally.",
+  alternates: {
+    canonical: "https://imaxeam.com/projects",
+  },
 };
 
 export default function RootLayout({
@@ -26,13 +32,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Header */}
         <Header />
 
-        <main className="w-full h-screen flex flex-col pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 ">
+        <main className="w-full min-h-[calc(100vh-150px)] flex flex-col">
           {children}
         </main>
+
+        {/* Footer */}
+        <Footer />
+        <ToastContainer />
       </body>
     </html>
   );

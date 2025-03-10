@@ -2,19 +2,43 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useSearchParams, useRouter } from "next/navigation";
 import imaxeamlogoandibm from "../../../../public/imaxeam-logo-and-ibm.png";
 import DynamicButton from "../Buttons/dynamicButton";
+import Link from "next/link";
 
 const Header = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  let scrollTimeout: NodeJS.Timeout | null = null;
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const goTo = (path: string) => {
+    router.push(path);
+    setIsAsideOpen(false);
+  };
 
   const toggleAside = () => {
     setIsAsideOpen(!isAsideOpen);
   };
 
+  // Dynamically update search params to force re-trigger
+  const handleProductsClick = () => {
+    const newSearch = new URLSearchParams(window.location.search);
+    newSearch.set("scrollTo", `products-${Date.now()}`); // Add timestamp to force change
+    router.push(`/?${newSearch.toString()}`, { scroll: false });
+
+    setIsAsideOpen(false); // Close sidebar on mobile
+  };
+  // Dynamically update search params to force re-trigger
+  const handleContactClick = () => {
+    const newSearch = new URLSearchParams(window.location.search);
+    newSearch.set("scrollTo", `contact-${Date.now()}`); // Add timestamp to force change
+    router.push(`/?${newSearch.toString()}`, { scroll: false });
+
+    setIsAsideOpen(false); // Close sidebar on mobile
+  };
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1280) {
@@ -23,46 +47,21 @@ const Header = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollTimeout) {
-        if (scrollTimeout !== null) {
-          clearTimeout(scrollTimeout);
-        }
-      }
-
       if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        // User is scrolling down
         setIsVisible(false);
       } else {
-        // User is scrolling up
         setIsVisible(true);
       }
-
       setLastScrollY(window.scrollY);
-
-      // Add slight delay before hiding
-      scrollTimeout = setTimeout(() => {
-        if (window.scrollY > lastScrollY) {
-          setIsVisible(false);
-        }
-      }, 200);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout) {
-        if (scrollTimeout !== null) {
-          clearTimeout(scrollTimeout);
-        }
-      }
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
@@ -76,18 +75,28 @@ const Header = () => {
         }`}
       >
         <Image
+          onClick={() => goTo("/")}
           src={imaxeamlogoandibm}
           alt="Imaxeam logo and IBM logo"
-          className="w-[200px] md:w-[350px] lg:w-[350px] xl:w-[35%]"
+          className="w-[200px] md:w-[350px] lg:w-[350px] xl:w-[35%] cursor-pointer"
         />
+
         {/* Desktop Nav Links */}
         <div className="hidden xl:flex">
           <ul className="flex gap-4 justify-center items-center">
-            <li className="li-custom-nav">Home</li>
-            <li className="li-custom-nav">Products & Services</li>
-            <li className="li-custom-nav">Projects</li>
-            <li className="li-custom-nav">About Us</li>
-            <li>
+            <li className="li-custom-nav" onClick={() => goTo("/")}>
+              Home
+            </li>
+            <li className="li-custom-nav" onClick={handleProductsClick}>
+              Products & Services
+            </li>
+            <li className="li-custom-nav" onClick={() => goTo("/projects")}>
+              Projects
+            </li>
+            <li className="li-custom-nav" onClick={() => goTo("/about-us")}>
+              About Us
+            </li>
+            <li onClick={handleContactClick}>
               <DynamicButton
                 fontSize="text-base"
                 text="Contact"
@@ -96,18 +105,20 @@ const Header = () => {
                 animationClassName="button-custom-nav"
               />
             </li>
-            <li>
+            <li onClick={() => goTo("/login")}>
               <DynamicButton
                 fontSize="text-base"
                 text="Login"
                 textColor="text-orange-100"
                 bgColor="bg-white-100"
+                underlineColor="#f26822"
                 onClick={() => {}}
                 animationClassName="li-custom-nav"
               />
             </li>
           </ul>
         </div>
+
         {/* Mobile Menu Icon */}
         <div className="xl:hidden">
           <svg
@@ -137,15 +148,43 @@ const Header = () => {
           >
             ✕
           </button>
-          <ul className="flex flex-col gap-8 mt-8 w-full text-right">
-            <li className="li-custom-nav text-white-100">Home</li>
-            <li className="li-custom-nav text-white-100">
+          <ul className="flex flex-col gap-8  w-full text-right">
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={() => goTo("/")}
+            >
+              Home
+            </li>
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={handleProductsClick}
+            >
               Products & Services
             </li>
-            <li className="li-custom-nav text-white-100">Projects</li>
-            <li className="li-custom-nav text-white-100">About Us</li>
-            <li className="li-custom-nav text-white-100">Contact</li>
-            <li className="li-custom-nav text-white-100">Login</li>
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={() => goTo("/projects")}
+            >
+              Projects
+            </li>
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={() => goTo("/about-us")}
+            >
+              About Us
+            </li>
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={handleContactClick}
+            >
+              Contact
+            </li>
+            <li
+              className="li-custom-nav text-white-100"
+              onClick={() => goTo("/login")}
+            >
+              Login
+            </li>
           </ul>
         </aside>
       )}
