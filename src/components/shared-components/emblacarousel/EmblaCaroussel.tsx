@@ -5,8 +5,24 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Card from "../card";
 
+type SlideType = {
+  minheight?: string;
+  shadow?: string;
+  icon?: string;
+  iconHeight?: number;
+  iconWidth?: number;
+  title?: string;
+  subtitle?: string;
+  textColor?: string;
+  button?: string;
+  onClick?: () => void;
+  description?: string;
+  src?: string;
+  index?: number;
+};
+
 type PropType = {
-  slides: number[];
+  slides: SlideType[];
   options?: EmblaOptionsType;
 };
 
@@ -33,21 +49,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              {/* <div className="embla__slide__number">{index + 1}</div> */}
-              <Card
-                // minheight="min-h-[350px]"
-                shadow="shadow-md"
-                icon="/onpremise.svg"
-                iconHeight={80}
-                iconWidth={80}
-                title="On-Premise Managed Service"
-                subtitle="Optimize resources with on-premise managed operations."
-                textColor="text-[#2E51CC]"
-              />
-            </div>
-          ))}
+          {slides.map((cardProps, index) => {
+            return (
+              <div className="embla__slide" key={index}>
+                <Card {...cardProps} />
+              </div>
+            );
+          })}
         </div>
       </div>
 

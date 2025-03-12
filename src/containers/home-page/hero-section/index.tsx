@@ -1,9 +1,14 @@
+"use client";
+
 import DynamicButton from "@/components/shared-components/Buttons/dynamicButton";
-import maxapps from "../../../../public/maxappsapp.png";
-import maximo from "../../../../public/maximo.png";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const router = useRouter(); // Initialize router
+
+  const handleNavigate = (path: string) => {
+    router.push(path);
+  };
   return (
     <section className="pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 ">
       <div
@@ -36,8 +41,13 @@ const HeroSection = () => {
 
             {/* buttons */}
             <div className="self-end flex gap-5 ">
-              <DynamicButton text="Learn more" fontSize="text-xl" />
               <DynamicButton
+                text="Learn more"
+                fontSize="text-xl"
+                onClick={() => handleNavigate("/projects")}
+              />
+              <DynamicButton
+                onClick={() => handleNavigate("/contact")}
                 hoverBgColor="hover:bg-black-100"
                 hoverTextColor="hover:text-white"
                 borderColor="#292930"
@@ -51,9 +61,9 @@ const HeroSection = () => {
           </div>
           <div className="w-[55%]  hidden xl:inline ml-25 ">
             <div className="relative ">
-              <Image src={maximo} alt="Maximo" width={680} height={680} />
-              <Image
-                src={maxapps}
+              <img src="/maximo.png" alt="Maximo" width={680} height={680} />
+              <img
+                src="/maxappsapp.png"
                 width={250}
                 height={250}
                 alt="Maxapps"

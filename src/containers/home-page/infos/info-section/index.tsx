@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 interface InfoSectionProps {
@@ -8,7 +7,7 @@ const InfoSection = ({ displayreverse }: InfoSectionProps) => {
   return (
     <div className={`flex justify-between gap-8`}>
       <div className="w-[50%]  hidden xl:flex justify-center">
-        <Image src="/whoarewe.png" alt="Who are we" width={600} height={600} />
+        <img src="/whoarewe.png" alt="Who are we" width={600} height={600} />
       </div>
       <div className="flex flex-col gap-5 w-[100%] xl:w-[50%] justify-center">
         <h3 className=" text-[29px] xl:text-[78px]">

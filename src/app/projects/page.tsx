@@ -7,6 +7,9 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Projects - Imaxeam.com",
+  alternates: {
+    canonical: "https://imaxeam.com/projects",
+  },
   description:
     "They Trust us Experience unparalleled reliability with our dedicated services and innovative solutions, designed to elevate your asset management with Maximo.",
 };

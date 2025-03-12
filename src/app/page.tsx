@@ -7,13 +7,8 @@ import HeroSection from "@/containers/home-page/hero-section";
 import InfiniteScroll from "@/containers/home-page/hero-section/infinite-scroll";
 import Infos from "@/containers/home-page/infos";
 import TrustSection from "@/containers/home-page/trust-section";
-import EmblaCarousel from "@/components/shared-components/emblacarousel/EmblaCaroussel";
-import { EmblaOptionsType } from "embla-carousel";
 
 export default function Home() {
-  const OPTIONS: EmblaOptionsType = {};
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const infosRef = useRef<HTMLDivElement>(null);
@@ -61,7 +56,6 @@ export default function Home() {
       <div ref={contactRef}>
         <GetInTouch />
       </div>
-      {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
     </div>
   );
 }

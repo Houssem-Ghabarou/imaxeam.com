@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared-components/header";
 import Footer from "@/components/shared-components/footer";
 import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
+import { MoonLoader } from "react-spinners";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"], // Adjust weights as needed
 });
 
 export const metadata: Metadata = {
@@ -20,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "IBM Maximo is Our Game Elevate your Maximo experience with iMaxeam's innovative solutions, designed to empower clients globally.",
   alternates: {
-    canonical: "https://imaxeam.com/projects",
+    canonical: "https://imaxeam.com/",
   },
 };
 
@@ -31,18 +29,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Header */}
-        <Header />
-
-        <main className="w-full min-h-[calc(100vh-150px)] flex flex-col">
-          {children}
-        </main>
-
-        {/* Footer */}
-        <Footer />
+      <body className={`${poppins.variable} antialiased`}>
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center min-h-screen">
+              <MoonLoader color="#f26822" />
+            </div>
+          }
+        >
+          {/* Header */}
+          <Header />
+          <main className="w-full min-h-[calc(100vh-150px)] flex flex-col">
+            {children}
+          </main>
+          {/* Footer */}
+          <Footer />
+        </Suspense>
         <ToastContainer />
       </body>
     </html>

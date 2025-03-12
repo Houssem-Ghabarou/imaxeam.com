@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const images = [
   "/rcjyGrey-1.png",
@@ -21,7 +20,7 @@ const InfiniteScroll = () => {
           <div className="scrolling flex min-w-max animate-scroll gap-10">
             {[...images, ...images, ...images].map((src, index) => (
               <div key={index} className="h-20 w-auto relative flex-shrink-0">
-                <Image
+                <img
                   src={src}
                   alt={`Image ${index}`}
                   width={100}

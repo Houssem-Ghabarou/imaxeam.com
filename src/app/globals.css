@@ -3,8 +3,8 @@
 
 @plugin "flowbite/plugin";
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-poppins);
   --color-orange-100: #f26822;
   --color-white-100: #ffffff;
   --color-black-100: #292930;
@@ -75,23 +75,23 @@
 
 /* Light theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #292930;
+  --background: #ffffff !important;
+  --foreground: #292930 !important;
 }
 
-/* Dark theme variables */
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   font-size: medium;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
 .embla {

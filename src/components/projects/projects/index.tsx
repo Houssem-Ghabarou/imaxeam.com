@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const projects = [
   {
     image: "/Projectscswg.png",
@@ -54,7 +52,7 @@ const ProjectsSection = () => {
               }`}
             >
               <div className="flex-1">
-                <Image
+                <img
                   src={project.image}
                   alt="Project Image"
                   width={604}

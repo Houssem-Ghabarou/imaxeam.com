@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Login - Imaxeam.com",
+  alternates: {
+    canonical: "https://imaxeam.com/login",
+  },
   description:
     "Welcome! Sign-in to access your files securely. Keep me logged in Sign in.",
 };

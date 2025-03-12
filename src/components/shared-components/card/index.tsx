@@ -43,12 +43,10 @@ const Card: React.FC<CardProps> = ({
         </h4>
         {image && (
           <div className="relative w-[100%] h-[150px]">
-            <Image
+            <img
               src={image}
               alt={"servicemaximo"}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
+              className="rounded-xl  object-cover"
             />
           </div>
         )}

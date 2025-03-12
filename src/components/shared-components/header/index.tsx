@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import imaxeamlogoandibm from "../../../../public/imaxeam-logo-and-ibm.png";
 import DynamicButton from "../Buttons/dynamicButton";
-import Link from "next/link";
+import { FiMenu } from "react-icons/fi";
+import { TfiClose } from "react-icons/tfi";
 
 const Header = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
@@ -74,9 +73,9 @@ const Header = () => {
             : "-translate-y-full opacity-0"
         }`}
       >
-        <Image
+        <img
           onClick={() => goTo("/")}
-          src={imaxeamlogoandibm}
+          src={"imaxeam-logo-and-ibm.png"}
           alt="Imaxeam logo and IBM logo"
           className="w-[200px] md:w-[350px] lg:w-[350px] xl:w-[35%] cursor-pointer"
         />
@@ -120,23 +119,9 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="xl:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 cursor-pointer"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            onClick={toggleAside}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </div>
+        <button className="xl:hidden cursor-pointer">
+          <FiMenu color="#f26822" size={30} onClick={toggleAside} />
+        </button>
       </nav>
 
       {/* Mobile Sidebar */}
@@ -146,7 +131,7 @@ const Header = () => {
             className="absolute top-4 right-4 text-orange-100 cursor-pointer text-2xl"
             onClick={toggleAside}
           >
-            ✕
+            <TfiClose size={30} />
           </button>
           <ul className="flex flex-col gap-8  w-full text-right">
             <li

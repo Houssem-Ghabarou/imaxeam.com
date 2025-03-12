@@ -93,7 +93,9 @@ export default function GetInTouch() {
       const emailParams = {
         name: formState.name,
         email: formState.email,
+        subject: formState.subject,
         message: formState.message,
+        to_email: process.env.NEXT_PUBLIC_EMAILS_TO_SEND_TO,
       };
 
       const res = await emailjs.send(
@@ -105,7 +107,6 @@ export default function GetInTouch() {
 
       if (res.status === 200) {
         toast.success("Message sent successfully! We'll get back to you soon.");
-        // Reset form after successful submission
         setFormState({
           name: "",
           email: "",
@@ -114,6 +115,7 @@ export default function GetInTouch() {
         });
       }
     } catch (error) {
+      console.error("Email sending failed", error);
     } finally {
       setIsSubmitting(false);
     }

@@ -8,12 +8,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us - Imaxeam.com",
+  alternates: {
+    canonical: "https://imaxeam.com/about-us",
+  },
   description:
     "Who are we? We are honored to have been an IBM Gold Business Partner, and a trusted IBM Maximo managed service provider. Offerings MAS 8 and Ext. Maximo 7.6 support.",
 };
 const AboutUs = () => {
   return (
-    <div className="min-h-screen py-60 px-3 ">
+    <div className="min-h-screen py-30  xl:py-50 px-3 ">
       <InfoSection />
       <InfiniteScroll />
       <AboutUsImaxeam />

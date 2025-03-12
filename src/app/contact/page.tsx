@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact - Imaxeam.com",
+  alternates: {
+    canonical: "https://imaxeam.com/contact",
+  },
   description:
     "Contact us today to learn more about our services and how we can help you elevate your asset management with Maximo.",
 };

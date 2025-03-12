@@ -1,8 +1,3 @@
-import DynamicButton from "@/components/shared-components/Buttons/dynamicButton";
-import maxapps from "../../../../public/maxappsapp.png";
-import maximo from "../../../../public/maximo.png";
-import Image from "next/image";
-
 const Ceos = () => {
   return (
     <section className="pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 ">
