@@ -45,7 +45,7 @@ export default function Home() {
   }, [pathname, searchParams, scrollTrigger]);
 
   return (
-    <div className="flex flex-col mb-20 w-full min-h-screen">
+    <div className="flex flex-col mb-20 w-full min-h-screen mt-24">
       <HeroSection />
       <InfiniteScroll />
       <div ref={infosRef}>

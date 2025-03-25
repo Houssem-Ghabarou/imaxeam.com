@@ -9,69 +9,78 @@ const HeroSection = () => {
   const handleNavigate = (path: string) => {
     router.push(path);
   };
+
   return (
-    <section className="pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 ">
-      <div
-        className="xl:max-h-[760px] bg-cover bg-center w-full py-20 px-3 xl:py-40 xl:px-25 rounded-2xl "
-        style={{ backgroundImage: "url('/herosection.png')" }}
-      >
-        <div className="flex justify-between ">
-          <div className="flex flex-col gap-5 w-[100%] xl:w-[45%]">
+    <section className="pl-2 pr-2 xl:pl-40 xl:pr-40 pt-4 flex justify-between items-center relative">
+      {/* Left Content (Text + Gradient Boxes) */}
+      <div className="flex flex-col gap-5 w-[60%] relative z-10">
+        <div
+          className="relative p-10 rounded-2xl  backdrop-blur-sm "
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(252, 119, 50, 0.1) 100%)",
+          }}
+        >
+          <div className="flex flex-col gap-5">
             <h1>
-              <strong className="font-bold">IBM</strong> Maximo
-              <br className="hidden xl:inline" /> is
-              <strong className="text-orange-100"> Our Game</strong>
+              <span className="font-bold">IBM</span> Maximo
+              <br /> is
+              <span className="text-orange-100 font-bold"> Our Game</span>
             </h1>
+          </div>
+        </div>
+
+        <div className="bg-[#FC773233]/45 backdrop-blur-sm  p-6 pr-10 rounded-2xl ">
+          <div className="flex flex-col gap-5">
             <p>
-              <strong>Elevate</strong> your Maximo experience with{" "}
-              <strong> iMaxeam's innovative solutions,</strong>
-              <br className="hidden xl:inline" /> designed to empower clients
-              globally.
+              Unlock the full potential of{" "}
+              <span className="font-bold">IBM Maximo</span> with{" "}
+              <span className="font-bold">iMaxeam</span>’s expert{" "}
+              <span className="font-bold">MAS integration</span>, innovative
+              add-ons, and premium managed services designed to empower
+              businesses worldwide.
             </p>
             <p>
-              Our premium add-ons <strong>enhance Maximo</strong>, making data
-              management
-              <br className="hidden xl:inline" /> effortless and improving
-              access and visualization for
-              <strong> business end-users</strong>
-              <br className="hidden xl:inline" /> and
-              <strong> I.T. super-users</strong> alike.
+              From seamless <span className="font-bold">IBM MAS </span>
+              integration to intelligent automation and proactive managed
+              services, we ensure Maximo works smarter for you. Our premium
+              add-ons <span className="font-bold">simplify</span> data
+              management, <span className="font-bold">enhance</span>{" "}
+              accessibility, and <span className="font-bold">improve</span>{" "}
+              visualization, giving business end-users and IT super-users the
+              power to make faster, data driven decisions.
             </p>
             <h2>Discover the future of Maximo with iMaxeam.</h2>
-
             {/* buttons */}
             <div className="self-end flex gap-5 ">
               <DynamicButton
-                text="Learn more"
+                text="Get in Touch"
                 fontSize="text-xl"
-                onClick={() => handleNavigate("/projects")}
+                onClick={() => handleNavigate("/contact")}
               />
               <DynamicButton
-                onClick={() => handleNavigate("/contact")}
                 hoverBgColor="hover:bg-black-100"
+                onClick={() => handleNavigate("/projects")}
                 hoverTextColor="hover:text-white"
                 borderColor="#292930"
                 underlineColor="white"
+                text="Learn more"
                 fontSize="text-xl"
-                text="Get in Touch"
                 textColor="bg-black-100"
                 bgColor="bg-transparent"
               />
             </div>
           </div>
-          <div className="w-[55%]  hidden xl:inline ml-25 ">
-            <div className="relative ">
-              <img src="/maximo.png" alt="Maximo" width={680} height={680} />
-              <img
-                src="/maxappsapp.png"
-                width={250}
-                height={250}
-                alt="Maxapps"
-                className="absolute right-30 top-15"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      {/* Right Side Image (Slightly Overlapping the Text Content) */}
+      <div className="relative   flex justify-end">
+        <img
+          src="herosectionimage.svg"
+          alt="hero"
+          className="w-full h-auto relative -left-10 "
+        />
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const images = [
 
 const InfiniteScroll = () => {
   return (
-    <div className="pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 mx-3 xl:my-12">
+    <div className=" pt-4 mx-3 xl:my-12">
       <div className="overflow-hidden w-full  rounded-2xl py-5">
         <div className="relative flex whitespace-nowrap">
           {/* Ensure seamless looping by duplicating images multiple times */}
@@ -23,7 +23,7 @@ const InfiniteScroll = () => {
                 <img
                   src={src}
                   alt={`Image ${index}`}
-                  width={100}
+                  width={150}
                   height={80}
                   className="object-contain"
                 />

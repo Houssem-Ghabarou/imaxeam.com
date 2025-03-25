@@ -67,17 +67,21 @@ const Header = () => {
     <>
       {/* Navbar */}
       <nav
-        className={`fixed z-50 top-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-6 xl:px-8 py-2 xl:py-5 bg-white-100 w-[92%] lg:w-[80%] mx-auto rounded-[50px] shadow-md mt-8 transition-transform duration-500 ${
+        className={`bg-white-100 fixed z-50 top-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-6 xl:px-8 py-2 xl:py-3 w-[92%] lg:w-[80%] mx-auto rounded-[50px] shadow-md mt-5 transition-transform duration-500 ${
           isVisible
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0"
         }`}
+        // style={{
+        //   background:
+        //     "linear-gradient(113.64deg, rgba(170, 170, 170, 0.1) 22.31%, rgba(252, 119, 50, 0.04) 55.51%, rgba(170, 170, 170, 0.1) 107.22%)",
+        // }}
       >
         <img
           onClick={() => goTo("/")}
-          src={"imaxeam-logo-and-ibm.png"}
+          src={"imaxeamlogo2.svg.svg"}
           alt="Imaxeam logo and IBM logo"
-          className="w-[200px] md:w-[350px] lg:w-[350px] xl:w-[35%] cursor-pointer"
+          className="cursor-pointer"
         />
 
         {/* Desktop Nav Links */}

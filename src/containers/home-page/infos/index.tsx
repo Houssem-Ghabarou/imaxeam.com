@@ -12,7 +12,7 @@ const OPTIONS: EmblaOptionsType = {};
 
 const InfosContent = () => (
   <div className="flex flex-col gap-35">
-    <InfoSection />
+    <InfoSection displayreverse={true} />
     <ServicesSection />
   </div>
 );
@@ -21,7 +21,7 @@ const Infos = () => {
   return (
     <>
       <section
-        className="hidden xl:inline h-[74%] bg-cover bg-center w-full py-20 px-3 xl:py-0 xl:px-25 rounded-2xl"
+        className="hidden   xl:inline h-[74%] bg-cover bg-center w-full py-20 px-3 xl:py-0 xl:px-25 rounded-2xl"
         style={{
           backgroundImage: "url('/who-are-we-bg.png')",
           backgroundPosition: "bottom left",
