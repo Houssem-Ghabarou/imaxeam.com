@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Canada",
+    "code": "CA",
+    "flag": "🇨🇦",
+    "email": "support@imaxeam.com",
+    "phone": "+123 456 7890",
+    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "timezone": "Your Time Zone"
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "flag": "🇺🇸",
+    "email": "us-support@imaxeam.com",
+    "phone": "+1 800 555 1234",
+    "hours": "Monday – Friday | 8 AM – 5 PM",
+    "timezone": "EST"
+  },
+  {
+    "name": "United Kingdom",
+    "code": "GB",
+    "flag": "🇬🇧",
+    "email": "uk-support@imaxeam.com",
+    "phone": "+44 20 7946 0958",
+    "hours": "Monday – Friday | 9 AM – 5 PM",
+    "timezone": "GMT"
+  },
+  {
+    "name": "Australia",
+    "code": "AU",
+    "flag": "🇦🇺",
+    "email": "au-support@imaxeam.com",
+    "phone": "+61 2 8046 6127",
+    "hours": "Monday – Friday | 9 AM – 5 PM",
+    "timezone": "AEST"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "flag": "🇩🇪",
+    "email": "de-support@imaxeam.com",
+    "phone": "+49 30 5770 36626",
+    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "timezone": "CET"
+  }
+]

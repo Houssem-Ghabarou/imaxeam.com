@@ -5,6 +5,7 @@ import InfoSection from "@/containers/home-page/infos/info-section";
 import React from "react";
 
 import type { Metadata } from "next";
+import OurLocations from "@/components/shared-components/getInTouch/outLocations";
 
 export const metadata: Metadata = {
   title: "About Us - Imaxeam.com",
@@ -16,12 +17,13 @@ export const metadata: Metadata = {
 };
 const AboutUs = () => {
   return (
-    <div className="min-h-screen py-30  xl:py-50 px-3 ">
-      <InfoSection />
+    <div className="min-h-screen  flex flex-col gap-10  py-40  ">
+      <InfoSection aboutus={true} />
       <InfiniteScroll />
       <AboutUsImaxeam />
 
       <GetInTouch />
+      <OurLocations />
     </div>
   );
 };

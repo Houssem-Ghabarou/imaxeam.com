@@ -2,26 +2,6 @@ export const servicesCardDataDesktop = [
   {
     minheight: "min-h-[350px]",
     shadow: "shadow-md",
-    icon: "/cloud.svg",
-    iconHeight: 80,
-    iconWidth: 80,
-    title: "Fully Managed Service on Cloud",
-    subtitle: "Boost efficiency with cloud-based managed solutions.",
-    textColor: "text-orange-100",
-  },
-  {
-    minheight: "min-h-[350px]",
-    shadow: "shadow-md",
-    icon: "/onpremise.svg",
-    iconHeight: 80,
-    iconWidth: 80,
-    title: "On-Premise Managed Service",
-    subtitle: "Optimize resources with on-premise managed operations.",
-    textColor: "text-[#2E51CC]",
-  },
-  {
-    minheight: "min-h-[350px]",
-    shadow: "shadow-md",
     icon: "/maxvs.png",
     title: "Visual Scheduler Calendar For Maximo",
     subtitle: "PROVEN MAXIMO ADD-ONS SOLUTIONS",
@@ -30,6 +10,20 @@ export const servicesCardDataDesktop = [
     link: "https://maxvs-scheduler.com/",
     description:
       "MAXVS is the Maximo visual scheduler for your team. With the integrated visual calendar, Maximo users can view and schedule W.O.and P.M.in a true calendar format. With a simple ‘drag and drop’, your schedule requires no manual entry for changes.",
+  },
+  {
+    minheight: "min-h-[350px]",
+    shadow: "shadow-md",
+    icon2: "/cloud.svg",
+    iconHeight: 80,
+    iconWidth: 80,
+    title: "On-Premise Managed Service",
+    title2: "Fully Managed Service on Cloud",
+
+    subtitle: "Optimize resources with on-premise managed operations.",
+    subtitle2: "Boost efficiency with cloud-based managed solutions.",
+    textColor2: "text-orange-100",
+    textColor: "text-[#2E51CC]",
   },
   {
     minheight: "min-h-[350px]",

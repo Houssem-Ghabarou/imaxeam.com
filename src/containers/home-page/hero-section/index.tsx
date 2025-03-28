@@ -11,11 +11,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="pl-2 pr-2 xl:pl-40 xl:pr-40 pt-4 flex justify-between items-center relative">
+    <section className="relative flex justify-between items-center px-6 xl:px-20 2xl:px-40 pt-4">
       {/* Left Content (Text + Gradient Boxes) */}
-      <div className="flex flex-col gap-5 w-[60%] relative z-10">
+      <div className="relative z-10 flex flex-col gap-5 w-[100%] xl:w-[45%] 2xl:w-[42%]">
         <div
-          className="relative p-10 rounded-2xl  backdrop-blur-sm "
+          className="relative p-10 rounded-2xl backdrop-blur-sm"
           style={{
             background:
               "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(252, 119, 50, 0.1) 100%)",
@@ -30,9 +30,9 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="bg-[#FC773233]/45 backdrop-blur-sm  p-6 pr-10 rounded-2xl ">
+        <div className="bg-[#FC773233]/45 backdrop-blur-sm p-6 2xl:pr-10 rounded-2xl">
           <div className="flex flex-col gap-5">
-            <p>
+            <p className="text-sm lg:text-[18px] 2xl:text-[20px]">
               Unlock the full potential of{" "}
               <span className="font-bold">IBM Maximo</span> with{" "}
               <span className="font-bold">iMaxeam</span>’s expert{" "}
@@ -40,22 +40,19 @@ const HeroSection = () => {
               add-ons, and premium managed services designed to empower
               businesses worldwide.
             </p>
-            <p>
-              From seamless <span className="font-bold">IBM MAS </span>
+            <p className="text-sm lg:text-[18px] 2xl:text-[20px]">
+              From seamless <span className="font-bold">IBM MAS </span>{" "}
               integration to intelligent automation and proactive managed
-              services, we ensure Maximo works smarter for you. Our premium
-              add-ons <span className="font-bold">simplify</span> data
-              management, <span className="font-bold">enhance</span>{" "}
-              accessibility, and <span className="font-bold">improve</span>{" "}
-              visualization, giving business end-users and IT super-users the
-              power to make faster, data driven decisions.
+              services, we ensure Maximo works smarter for you.
             </p>
-            <h2>Discover the future of Maximo with iMaxeam.</h2>
-            {/* buttons */}
-            <div className="self-end flex gap-5 ">
+            <h2 className="text-sm lg:text-[18px] 2xl:text-[20px] font-bold">
+              Discover the future of Maximo with iMaxeam.
+            </h2>
+            {/* Buttons */}
+            <div className="self-end flex gap-5">
               <DynamicButton
                 text="Get in Touch"
-                fontSize="text-xl"
+                fontSize="text-sm"
                 onClick={() => handleNavigate("/contact")}
               />
               <DynamicButton
@@ -65,7 +62,7 @@ const HeroSection = () => {
                 borderColor="#292930"
                 underlineColor="white"
                 text="Learn more"
-                fontSize="text-xl"
+                fontSize="text-sm"
                 textColor="bg-black-100"
                 bgColor="bg-transparent"
               />
@@ -74,12 +71,14 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Right Side Image (Slightly Overlapping the Text Content) */}
-      <div className="relative   flex justify-end">
-        <img
-          src="herosectionimage.svg"
-          alt="hero"
-          className="w-full h-auto relative -left-10 "
+      {/* Right Side Video (Covers Entire Right Side) */}
+      <div className="hidden xl:block absolute   min-[1280px]:right-[-120px]  min-[1500px]:right-[-100px] min-[1700px]:right-[-100px] top-8 xl:w-[60%] 2xl:[50%] h-full z-0 ">
+        <video
+          autoPlay
+          muted
+          loop
+          className="min-[1280px]:w-[600px] min-[1500px]:w-[700px] min-[1700px]:w-[780px] h-[90%] object-cover rounded-3xl overflow-hidden"
+          src="introimaxeam.webm"
         />
       </div>
     </section>

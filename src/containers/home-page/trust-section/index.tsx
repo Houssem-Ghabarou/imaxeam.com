@@ -5,6 +5,7 @@ import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "@/components/shared-components/emblacarousel/EmblaCaroussel";
 import { useRouter } from "next/navigation";
+import DynamicButton from "@/components/shared-components/Buttons/dynamicButton";
 
 const TrustSection = () => {
   const router = useRouter(); // Initialize router
@@ -17,8 +18,8 @@ const TrustSection = () => {
   const slides = [
     {
       id: 1,
-      src: "/southernCompanyThumbnail.png",
-      image: "/southernCompanyThumbnail.png",
+      src: "/ProjectssouthernCompany.png",
+      image: "/ProjectssouthernCompany.png",
       description: "Explore the heights of natural beauty",
       button: "Learn more",
       textColor: "text-orange-100",
@@ -26,8 +27,8 @@ const TrustSection = () => {
     },
     {
       id: 2,
-      src: "/motThumbnail.png",
-      image: "/motThumbnail.png",
+      src: "/Projectsmot.png",
+      image: "/Projectsmot.png",
       description: "Relax with stunning ocean views",
       button: "Learn more",
       textColor: "text-orange-100",
@@ -35,8 +36,8 @@ const TrustSection = () => {
     },
     {
       id: 3,
-      src: "/timkenSteelThumbnail.png",
-      image: "/timkenSteelThumbnail.png",
+      src: "/ProjectstimkenSteel.png",
+      image: "/ProjectstimkenSteel.png",
       button: "Learn more",
       textColor: "text-orange-100",
       description: "Discover hidden paths through ancient woods",
@@ -44,8 +45,8 @@ const TrustSection = () => {
     },
     {
       id: 4,
-      src: "/rtcThumbnail.png",
-      image: "/rtcThumbnail.png",
+      src: "/Projectsrtc.png",
+      image: "/Projectsrtc.png",
       button: "Learn more",
       textColor: "text-orange-100",
       description: "Experience the energy of city life",
@@ -53,8 +54,8 @@ const TrustSection = () => {
     },
     {
       id: 5,
-      src: "/cswgThumbnail.png",
-      image: "/cswgThumbnail.png",
+      src: "/Projectscswg.png",
+      image: "/Projectscswg.png",
       button: "Learn more",
       textColor: "text-orange-100",
       description: "Marvel at vast golden dunes",
@@ -67,43 +68,30 @@ const TrustSection = () => {
   return (
     <section className="xl:inline bg-cover bg-center w-full py-10">
       <div
-        className="px-2 flex flex-col xl:flex-row xl:justify-between xl:px-50 items-center xl:gap-8"
         style={{
-          backgroundImage: "url('/trustus.png')",
-          backgroundPosition: "bottom right",
-          backgroundSize: "65% auto",
-          backgroundRepeat: "no-repeat",
+          background:
+            "linear-gradient(97.4deg, rgba(238, 238, 238, 0.5) 23.21%, rgba(242, 242, 242, 0.8) 81.91%)",
         }}
       >
-        <div className="flex flex-col gap-5 w-[100%] xl:w-[50%] justify-center">
-          <h3 className="text-[29px] xl:text-[61px] font-bold">
-            They <span className="text-orange-100">Trust us</span>
-          </h3>
-          <p>
-            Experience unparalleled reliability with our dedicated services and{" "}
-            <br className="hidden xl:inline" />
-            innovative solutions, designed to <strong>elevate</strong> your
-            asset management with <br className="hidden xl:inline" />
-            <strong>Maximo</strong>.<br className="hidden xl:inline" /> We
-            ensure <strong>seamless operations</strong> and{" "}
-            <strong>enhanced productivity</strong>, backed by
-            <br className="hidden xl:inline" /> our
-            <strong> around-the-clock support</strong>.
-          </p>
-          <p>
-            <strong className="text-orange-100">Trust us, </strong>to be your
-            steadfast partner, delivering continuous service and{" "}
-            <br className="hidden xl:inline" /> expertise that keeps your assets
-            performing at their peak, <strong>24/7</strong>.
-          </p>
-        </div>
-        <div className="xl:w-[50%] xl:inline hidden">
+        <div className="xl:w-[100%] xl:flex hidden  flex-col gap-3 px-6 xl:px-20 2xl:px-40  py-5">
           {/* Pass the slides array with onClick to CustomCarousel */}
-          <CustomCarousel slides={slides} />
+          <div className="w-full flex justify-between items-center">
+            <div className="text-md lg:text-[64px] text-black-300">
+              They <span className="text-orange-100 font-bold">Trust Us</span>
+            </div>
+            <DynamicButton
+              text="Learn more"
+              bgColor="bg-transparant "
+              borderColor="border-black-100"
+              textColor="text-black-100"
+              underlineColor="black"
+            />
+          </div>
+          <CustomCarousel slides={slides} perview={4} />
         </div>
-        <div className="xl:hidden w-full">
+        <div className="xl:hidden w-full  p-10">
           {/* Pass the slides array with onClick to EmblaCarousel */}
-          <EmblaCarousel options={OPTIONS} slides={slides} />
+          <CustomCarousel slides={slides} perview={1} />
         </div>
       </div>
     </section>

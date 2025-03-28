@@ -1,22 +1,22 @@
 const Ceos = () => {
   return (
-    <section className="pl-2 pr-2 xl:pl-25 xl:pr-25 pt-4 ">
+    <section className=" ">
       <div
-        className=" bg-cover bg-center w-full py-20 px-3 xl:px-25 rounded-2xl "
-        style={{ backgroundImage: "url('/herosection.png')" }}
+        className=" bg-cover bg-center w-full py-20 px-6 xl:px-20 2xl:px-40  bg-orange-100 "
+        // style={{ backgroundImage: "url('/herosection.png')" }}
       >
         <div className="flex flex-col xl:flex-row justify-between xl:items-center ">
           <div className="flex flex-col gap-5 w-[100%] xl:w-[45%]">
-            <h1>
+            <h1 className="text-white-100">
               Meet <br />
-              <strong className="text-orange-100">Our Co-CEOs</strong>
+              <strong className="text-white-100">Our Co-CEOs</strong>
             </h1>
           </div>
 
           <div className="xl:w-[55%] flex flex-col gap-6">
             <div className=" flex flex-col relative">
               <div className="flex justify-between">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 text-white-100">
                   <strong className="text-[29px] xl:text-[54px] font-bold leading-[65px]">
                     Jean Roger Siani
                   </strong>
@@ -35,7 +35,7 @@ const Ceos = () => {
               />
             </div>
             <div className=" flex flex-col relative">
-              <div className="flex justify-between self-end  text-right">
+              <div className="flex justify-between self-end  text-right text-white-100">
                 <div className="flex flex-col gap-3">
                   <strong className="text-[29px] xl:text-[54px] font-bold leading-[65px]">
                     Mahdi Nabli

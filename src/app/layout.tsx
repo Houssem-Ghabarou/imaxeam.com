@@ -6,6 +6,8 @@ import Footer from "@/components/shared-components/footer";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
 import { MoonLoader } from "react-spinners";
+import "keen-slider/keen-slider.min.css";
+import KeenSlider from "keen-slider";
 
 const poppins = Poppins({
   variable: "--font-poppins",

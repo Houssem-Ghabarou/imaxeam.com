@@ -11,9 +11,11 @@ import { servicesCardData } from "@/data/servicesCardData";
 const OPTIONS: EmblaOptionsType = {};
 
 const InfosContent = () => (
-  <div className="flex flex-col gap-35">
+  <div className="flex flex-col gap-10 ">
     <InfoSection displayreverse={true} />
-    <ServicesSection />
+    <div className="px-8 xl:px-20 2xl:px-40">
+      <ServicesSection />
+    </div>
   </div>
 );
 
@@ -31,7 +33,7 @@ const Infos = () => {
         <InfosContent />
       </section>
 
-      <section className="flex flex-col gap-4 xl:hidden pl-2 pr-2">
+      <section className="flex flex-col gap-4 xl:hidden ">
         <InfoSection />
         <div
           style={{
@@ -43,7 +45,7 @@ const Infos = () => {
             borderRadius: "15px",
             // height: "700px",
           }}
-          className="py-10 mb-10 h-full"
+          className="py-10 mb-10 h-full mx-6 px-6"
         >
           <UnmatchedServices />
           <EmblaCarousel options={OPTIONS} slides={servicesCardData} />

@@ -7,6 +7,8 @@ import HeroSection from "@/containers/home-page/hero-section";
 import InfiniteScroll from "@/containers/home-page/hero-section/infinite-scroll";
 import Infos from "@/containers/home-page/infos";
 import TrustSection from "@/containers/home-page/trust-section";
+import OurLocations from "@/components/shared-components/getInTouch/outLocations";
+import { CookieConsent } from "@/components/shared-components/cookies/cookie-consent";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -14,6 +16,9 @@ export default function Home() {
   const infosRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const [scrollTrigger, setScrollTrigger] = useState(false);
+  const [variant, setVariant] = useState<"banner" | "modal" | "compact">(
+    "modal"
+  );
 
   useEffect(() => {
     const scrollToSection = () => {
@@ -56,6 +61,14 @@ export default function Home() {
       <div ref={contactRef}>
         <GetInTouch />
       </div>
+      <OurLocations />
+      <CookieConsent
+        variant={variant}
+        onAccept={() => console.log("Cookies accepted")}
+        onDecline={() => console.log("Cookies declined")}
+        onManage={() => console.log("Manage cookies")}
+        privacyPolicyUrl="#"
+      />
     </div>
   );
 }

@@ -38,34 +38,38 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="pl-2 pr-2 xl:pl-25 xl:pr-25 ">
+    <section className="px-6 xl:px-20 2xl:px-40   ">
       <div
-        className=" bg-cover bg-center w-full py-20 px-3 xl:py-40 xl:px-25 rounded-2xl "
-        style={{ backgroundImage: "url('/herosection.png')" }}
+        className=" bg-cover bg-center w-full py-2 xl:py-20 px-3 xl:py-10  xl:px-20 rounded-2xl "
+        style={{
+          background: `linear-gradient(97.4deg, rgba(238, 238, 238, 0.5) 23.21%, rgba(242, 242, 242, 0.8) 81.91%)`,
+        }}
       >
         <div className="mt-10 space-y-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`flex flex-col xl:flex-row items-center gap-8 ${
+              className={`flex flex-col xl:flex-row  gap-8  ${
                 index % 2 === 0 ? "xl:flex-row" : "xl:flex-row-reverse"
               }`}
             >
-              <div className="flex-1">
+              <div className="hidden flex-1 xl:flex items-center justify-center ">
                 <img
                   src={project.image}
                   alt="Project Image"
-                  width={604}
-                  height={400}
-                  className="rounded-lg"
+                  className="rounded-lg h-full object-cover max-h-[350px] w-full "
                 />
               </div>
-              <div className="flex-1  flex flex-col gap-5">
-                <h1 className="leading-[65px]">
-                  <strong>{project.title}</strong>
-                </h1>
-                <h2 className="text-[29px] font-normal">{project.subtitle}</h2>
-                <p>{project.description}</p>
+              <div className="flex-1  flex flex-col gap-2 bg-white-100 rounded-2xl  ">
+                <div className="text-md xl:text-[25px] pt-6 xl:pt-15 px-8 text-[#222222] font-[700] ">
+                  {project.title}
+                </div>
+                <div className="text-md text-[#F26822] px-8 xl:text-[20px] font-normal">
+                  {project.subtitle}
+                </div>
+                <p className="text-[#292930] pb-6 xl:pb-15 px-8 text-sm  leading-[24px] ">
+                  {project.description}
+                </p>
               </div>
             </div>
           ))}

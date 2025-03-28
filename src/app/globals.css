@@ -5,10 +5,13 @@
 @theme {
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-poppins);
-  --color-orange-100: #fc7732;
+  --color-orange-100: #f26822;
+  --color-orange-200: #fc7732;
   --color-white-100: #ffffff;
   --color-black-100: #292930;
   --color-black-200: #575350;
+  --color-black-300: #1e1e1e;
+  --color-black-400: #222222;
 }
 
 @layer components {
@@ -87,6 +90,11 @@
   }
 } */
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 body {
   font-size: medium;
   color: var(--foreground);
@@ -219,4 +227,29 @@ body {
 .embla__dot--selected:after {
   box-shadow: inset 0 0 0 0.2rem #f26822;
   background: #f26822;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #000;
 }
