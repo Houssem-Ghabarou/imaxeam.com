@@ -16,7 +16,7 @@ const InfoSection = ({ displayreverse, aboutus }: InfoSectionProps) => {
       } relative h-[500px] px-6 xl:px-20 2xl:px-40`}
     >
       <div
-        className={`flex flex-col gap-1 w-full 2xl:w-[50%] z-10 rounded-2xl ${
+        className={`flex flex-col gap-1 w-full justify-center  2xl:w-[50%] z-10 rounded-2xl ${
           aboutus ? "p-6" : ""
         }`}
         style={{
@@ -26,7 +26,7 @@ const InfoSection = ({ displayreverse, aboutus }: InfoSectionProps) => {
         }}
       >
         <h3
-          className={`text-md xl:text-[60px] xl:leading-[100px] font-bold ${textColorClass}`}
+          className={`text-[40px] xl:text-[60px] xl:leading-[100px] font-bold ${textColorClass}`}
         >
           Who are we ?
         </h3>
@@ -75,7 +75,7 @@ const InfoSection = ({ displayreverse, aboutus }: InfoSectionProps) => {
           autoPlay
           muted
           loop
-          src="whoarewe.webm"
+          src="/whoarewe.webm"
           className="max-w-none w-auto h-auto overflow-hidden min-h-[750px]"
           style={{ maxHeight: "none" }}
           playsInline

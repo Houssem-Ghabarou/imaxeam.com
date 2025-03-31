@@ -52,7 +52,7 @@ export function CookieConsent({
         "fixed z-50 font-sans text-sm",
         variant === "banner" &&
           "top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-3xl",
-        variant === "modal" && "bottom-4 right-25  xl:right-30 max-w-xs",
+        variant === "modal" && "bottom-4 right-22  xl:right-30 max-w-xs",
         variant === "compact" && "bottom-4 right-4 max-w-xs"
       )}
     >

@@ -73,25 +73,37 @@ const TrustSection = () => {
             "linear-gradient(97.4deg, rgba(238, 238, 238, 0.5) 23.21%, rgba(242, 242, 242, 0.8) 81.91%)",
         }}
       >
-        <div className="xl:w-[100%] xl:flex hidden  flex-col gap-3 px-6 xl:px-20 2xl:px-40  py-5">
+        <div className="w-[100%] flex   flex-col gap-3 px-6 xl:px-20 2xl:px-40  py-5">
           {/* Pass the slides array with onClick to CustomCarousel */}
           <div className="w-full flex justify-between items-center">
-            <div className="text-md lg:text-[64px] text-black-300">
+            <div className="text-[20px]  lg:text-[64px] text-black-300">
               They <span className="text-orange-100 font-bold">Trust Us</span>
             </div>
-            <DynamicButton
-              text="Learn more"
-              bgColor="bg-transparant "
-              borderColor="border-black-100"
-              textColor="text-black-100"
-              underlineColor="black"
-            />
+            <a onClick={handleNavigate}>
+              <DynamicButton
+                text="Learn more"
+                bgColor="bg-transparant "
+                borderColor="border-black-100"
+                textColor="text-black-100"
+                underlineColor="black"
+              />
+            </a>
           </div>
-          <CustomCarousel slides={slides} perview={4} />
-        </div>
-        <div className="xl:hidden w-full  p-10">
-          {/* Pass the slides array with onClick to EmblaCarousel */}
-          <CustomCarousel slides={slides} perview={1} />
+          <div className="inline md:hidden  w-full   ">
+            {/* Pass the slides array with onClick to EmblaCarousel */}
+            <CustomCarousel slides={slides} perview={1} />
+          </div>
+          <div className="hidden md:inline lg:hidden  w-full  ">
+            {/* Pass the slides array with onClick to EmblaCarousel */}
+            <CustomCarousel slides={slides} perview={2} />
+          </div>
+          <div className="hidden lg:inline xl:hidden  w-full  ">
+            {/* Pass the slides array with onClick to EmblaCarousel */}
+            <CustomCarousel slides={slides} perview={3} />
+          </div>
+          <div className="hidden xl:inline  w-full  ">
+            <CustomCarousel slides={slides} perview={4} />
+          </div>
         </div>
       </div>
     </section>

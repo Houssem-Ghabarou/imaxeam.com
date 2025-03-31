@@ -1,7 +1,9 @@
+"use client";
 import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import DynamicButton from "../Buttons/dynamicButton";
+import { useRouter } from "next/navigation";
 
 interface CustomCarouselProps {
   slides: {
@@ -20,6 +22,10 @@ export default function CustomCarousel({
   slides,
   perview,
 }: CustomCarouselProps) {
+  const router = useRouter(); // Initialize router
+  const handleNavigate = () => {
+    router.push("/projects"); // Navigate to /projects
+  };
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const [loaded, setLoaded] = useState(false);
@@ -50,7 +56,10 @@ export default function CustomCarousel({
               alt={slide.description}
               className="w-full h-60 object-cover" // Adjusted size for the image
             />
-            <a className="absolute  right-1 bottom-5  flex justify-center items-center">
+            <a
+              className="absolute  right-1 bottom-5  flex justify-center items-center"
+              onClick={handleNavigate} // Navigate to /projects on click
+            >
               <DynamicButton
                 text="Learn more"
                 bgColor="transparant "

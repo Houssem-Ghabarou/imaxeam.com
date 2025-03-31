@@ -46,18 +46,18 @@ export default function OurLocations() {
         </div>
 
         {/* Locations Information */}
-        <div className="w-full md:w-1/2 p-8 flex flex-col gap-4">
-          <h2 className="text-md lg:text-[70px] font-bold text-[#F26430] mb-2">
+        <div className="w-full md:w-1/2 md:p-8 flex flex-col gap-1 xl:gap-4">
+          <h2 className="text-[30px] lg:text-[70px] font-bold text-[#F26430] mb-2">
             Our locations
           </h2>
-          <p className="text-black-300  text-sm lg:text-[25px] font-[600] mb-8">
+          <p className="text-black-300  text-md lg:text-[25px] font-[600] mb-8">
             Let's Elevate Your Maximo Experience!
           </p>
 
           <div className="space-y-6">
             {locations.map((location, index) => (
               <div key={index} className="flex items-start">
-                <div className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-center mr-4  shadow-sm">
+                <div className=" w-10 h-10 xl:w-20 xl:h-20 rounded-full overflow-hidden flex items-center justify-center mr-4  shadow-sm">
                   {/* <span className="text-3xl">{location.flag}</span> */}
                   <Flag code={location?.code} fallback={<span>Unknown</span>} />
                 </div>

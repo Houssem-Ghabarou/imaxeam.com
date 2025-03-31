@@ -1,14 +1,14 @@
 const TrustUsProjects = () => {
   return (
     <section
-      className="xl:max-h-[760px] bg-cover bg-center w-full pt-40 px-6 xl:px-20 xl:pt-45 2xl:px-50 rounded-2xl flex flex-col justify-center items-center text-center gap-8 "
+      className="xl:max-h-[760px] bg-cover bg-center w-full pt-40 px-6 xl:px-20 xl:pt-30 2xl:px-50 rounded-2xl flex flex-col justify-center items-center text-center gap-8 "
       style={{
         backgroundImage: "url('/trustus.png')",
         backgroundPosition: "bottom right",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <h1 className="font-bold">
+      <h1 className="font-bold text-[30px] md:text-[50px] lg:text-[70px]">
         They <span className="text-orange-100 ">Trust Us</span>
       </h1>
       <p className="lg:w-[65%] font-bold  text-[18px]">

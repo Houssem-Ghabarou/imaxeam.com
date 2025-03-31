@@ -27,11 +27,18 @@ const DynamicButton: React.FC<DynamicButtonProps> = ({
 }) => {
   return (
     <button
-      className={`group cursor-pointer px-5 py-2 rounded-[20px] border transition-all duration-300 ${textColor} ${bgColor} ${borderColor} ${hoverBgColor} ${hoverTextColor}`}
+      className={`group z-10 cursor-pointer px-5 py-2 rounded-[20px] border transition-all duration-300 ${textColor} ${bgColor} ${borderColor} ${hoverBgColor} ${hoverTextColor} shadow-[0px_2px_30px_0px_${bgColor.replace(
+        "bg-",
+        ""
+      )}66]`}
       onClick={onClick}
       style={{ "--underline-color": underlineColor } as React.CSSProperties} // Set CSS variable for underline
     >
-      <div className={`button-custom-nav ${fontSize} font-medium`}>{text}</div>
+      <div
+        className={`button-custom-nav font-medium text-sm lg:text-md whitespace-nowrap`}
+      >
+        {text}
+      </div>
     </button>
   );
 };

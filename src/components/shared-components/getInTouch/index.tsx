@@ -7,6 +7,10 @@ import emailjs from "@emailjs/browser";
 import { Calendar, Mail, Phone } from "lucide-react";
 import countryData from "@/data/countries.json";
 import DynamicButton from "../Buttons/dynamicButton";
+import LottieAnim from "../lottie/LottieAnim";
+import emailAnimation from "@/assets/Get in touch/Email.json";
+import phoneAnimation from "@/assets/Get in touch/Phone.json";
+import calendarAnimation from "@/assets/Get in touch/Calendar.json";
 type FormState = {
   name: string;
   email: string;
@@ -150,7 +154,7 @@ export default function GetInTouch() {
     <div className="px-6 xl:px-20 2xl:px-40  flex flex-col lg:flex-row  gap-10">
       <div className="w-full lg:w-[50%] bg-white py-8">
         <div className="mb-8">
-          <h1 className="text-md lg:text-[70px] font-bold text-[#F26430] mb-2">
+          <h1 className="text-3xl lg:text-[70px] font-bold text-[#F26430] mb-2">
             Get in Touch
           </h1>
           <p className="text-gray-700 mb-4 text-md lg:text-[28px]">
@@ -206,15 +210,7 @@ export default function GetInTouch() {
                     "linear-gradient(113.64deg, rgba(170, 170, 170, 0.1) 22.31%, rgba(252, 119, 50, 0.2) 55.51%, rgba(170, 170, 170, 0.1) 107.22%)",
                 }}
               >
-                <img
-                  src="/email.svg"
-                  alt="mail"
-                  className="w-10 h-10 text-black"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                  }}
-                />
+                <LottieAnim animationData={emailAnimation} />
               </div>
               <p className="text-gray-700">{selectedCountry.email}</p>
             </div>
@@ -227,15 +223,7 @@ export default function GetInTouch() {
                     "linear-gradient(113.64deg, rgba(170, 170, 170, 0.1) 22.31%, rgba(252, 119, 50, 0.2) 55.51%, rgba(170, 170, 170, 0.1) 107.22%)",
                 }}
               >
-                <img
-                  src="/phonenumber.svg"
-                  alt="phone"
-                  className="w-10 h-10"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                  }}
-                />
+                <LottieAnim animationData={phoneAnimation} />
               </div>
               <p className="text-gray-700">{selectedCountry.phone}</p>
             </div>
@@ -248,15 +236,7 @@ export default function GetInTouch() {
                     "linear-gradient(113.64deg, rgba(170, 170, 170, 0.1) 22.31%, rgba(252, 119, 50, 0.2) 55.51%, rgba(170, 170, 170, 0.1) 107.22%)",
                 }}
               >
-                <img
-                  src="/datepicker.svg"
-                  className="w-10 h-10 text-[#F26430]"
-                  alt="datepicker"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                  }}
-                />
+                <LottieAnim animationData={calendarAnimation} />
               </div>
               <div>
                 <p className="text-gray-700">{selectedCountry.hours}</p>
@@ -358,7 +338,7 @@ export default function GetInTouch() {
             }}
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#FC7732] text-white w-[30%] self-start py-3 rounded-4xl cursor-pointer transition disabled:opacity-70 disabled:cursor-not-allowed flex justify-center"
+            className="bg-[#FC7732] text-white w-[40%] self-start py-3 rounded-4xl cursor-pointer transition disabled:opacity-70 disabled:cursor-not-allowed flex justify-center"
           >
             {isSubmitting ? (
               <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent" />

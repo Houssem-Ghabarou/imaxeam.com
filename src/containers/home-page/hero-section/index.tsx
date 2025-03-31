@@ -1,6 +1,8 @@
 "use client";
 
 import DynamicButton from "@/components/shared-components/Buttons/dynamicButton";
+import LottieAnim from "@/components/shared-components/lottie/LottieAnim";
+import animationData from "../../../assets/Scroll GIF/down-arrow.json";
 import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
@@ -11,75 +13,86 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative flex justify-between items-center px-6 xl:px-20 2xl:px-40 pt-4">
-      {/* Left Content (Text + Gradient Boxes) */}
-      <div className="relative z-10 flex flex-col gap-5 w-[100%] xl:w-[45%] 2xl:w-[42%]">
-        <div
-          className="relative p-10 rounded-2xl backdrop-blur-sm"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(252, 119, 50, 0.1) 100%)",
-          }}
-        >
-          <div className="flex flex-col gap-5">
-            <h1>
-              <span className="font-bold">IBM</span> Maximo
-              <br /> is
-              <span className="text-orange-100 font-bold"> Our Game</span>
-            </h1>
+    <section className="px-6 xl:px-20 2xl:px-40 pt-4 max-h-screen ">
+      <div className="flex gap-8 justify-between h-[85%] ">
+        {/* Left Content (Text + Gradient Boxes) */}
+        <div className=" z-10  w-[100%] flex flex-col gap-5   lg:w-[90%]   xl:w-[70%] ">
+          <div
+            className=" p-6 min-[1800px]:p-10 rounded-2xl backdrop-blur-sm"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(252, 119, 50, 0.1) 100%)",
+            }}
+          >
+            <div className="flex flex-col ">
+              <h1 className="text-[40px] min-[1800px]:text-[50px] leading-[50px]  ">
+                <span className="font-bold">IBM</span> Maximo
+                <br /> is
+                <span className="text-[#FC7732] font-bold"> Our Game</span>
+              </h1>
+            </div>
           </div>
-        </div>
 
-        <div className="bg-[#FC773233]/45 backdrop-blur-sm p-6 2xl:pr-10 rounded-2xl">
-          <div className="flex flex-col gap-5">
-            <p className="text-sm lg:text-[18px] 2xl:text-[20px]">
-              Unlock the full potential of{" "}
-              <span className="font-bold">IBM Maximo</span> with{" "}
-              <span className="font-bold">iMaxeam</span>’s expert{" "}
-              <span className="font-bold">MAS integration</span>, innovative
-              add-ons, and premium managed services designed to empower
-              businesses worldwide.
-            </p>
-            <p className="text-sm lg:text-[18px] 2xl:text-[20px]">
-              From seamless <span className="font-bold">IBM MAS </span>{" "}
-              integration to intelligent automation and proactive managed
-              services, we ensure Maximo works smarter for you.
-            </p>
-            <h2 className="text-sm lg:text-[18px] 2xl:text-[20px] font-bold">
-              Discover the future of Maximo with iMaxeam.
-            </h2>
-            {/* Buttons */}
-            <div className="self-end flex gap-5">
-              <DynamicButton
-                text="Get in Touch"
-                fontSize="text-sm"
-                onClick={() => handleNavigate("/contact")}
-              />
-              <DynamicButton
-                hoverBgColor="hover:bg-black-100"
-                onClick={() => handleNavigate("/projects")}
-                hoverTextColor="hover:text-white"
-                borderColor="#292930"
-                underlineColor="white"
-                text="Learn more"
-                fontSize="text-sm"
-                textColor="bg-black-100"
-                bgColor="bg-transparent"
-              />
+          <div className="bg-[#FC773233]/45 backdrop-blur-sm p-6  min-[1800px]:p-10  rounded-2xl  ">
+            <div className="flex flex-col gap-5">
+              <p className="text-sm   min-[1800px]:text-[18px] leading-[140%]  ">
+                Unlock the full potential of{" "}
+                <span className="font-bold">IBM Maximo</span> with{" "}
+                <span className="font-bold">iMaxeam</span>’s expert{" "}
+                <span className="font-bold">MAS integration</span>, innovative
+                add-ons, and premium managed services designed to empower
+                businesses worldwide.
+              </p>
+              <p className="text-sm   min-[1800px]:text-[18px] leading-[140%] ">
+                From seamless <span className="font-bold">IBM MAS </span>{" "}
+                integration to intelligent automation and proactive managed
+                services, we ensure Maximo works smarter for you.
+              </p>
+              <p className="text-sm   min-[1800px]:text-[18px] leading-[140%] ">
+                Our premium add-ons simplify data management, enhance
+                accessibility, and improve visualization, giving business
+                end-users and IT super-users the power to make faster, data
+                driven decisions.
+              </p>
+              <h2 className="text-md  min-[1800px]:text-[20px] font-bold leading-[140%] text-[#FC7732] ">
+                Discover the future of Maximo with iMaxeam.
+              </h2>
+              {/* Buttons */}
+              <div className="self-end flex gap-5">
+                <DynamicButton
+                  text="Get in Touch"
+                  fontSize="text-sm"
+                  onClick={() => handleNavigate("/contact")}
+                />
+                <DynamicButton
+                  hoverBgColor="hover:bg-black-100"
+                  onClick={() => handleNavigate("/projects")}
+                  hoverTextColor="hover:text-white"
+                  borderColor="#292930"
+                  underlineColor="white"
+                  text="Learn more"
+                  fontSize="text-sm"
+                  textColor="bg-black-100"
+                  bgColor="bg-transparent"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Right Side Video (Covers Entire Right Side) */}
-      <div className="hidden xl:block absolute   min-[1280px]:right-[-120px]  min-[1500px]:right-[-100px] min-[1700px]:right-[-100px] top-8 xl:w-[60%] 2xl:[50%] h-full z-0 ">
-        <video
-          autoPlay
-          muted
-          loop
-          className="min-[1280px]:w-[600px] min-[1500px]:w-[700px] min-[1700px]:w-[780px] h-[90%] object-cover rounded-3xl overflow-hidden"
-          src="introimaxeam.webm"
-        />
+        {/* Right Side Video (Covers Entire Right Side) */}
+        <div className="hidden pt-3  lg:flex lg:flex-col ">
+          <video
+            autoPlay
+            muted
+            loop
+            className="w-full h-[100%] object-cover rounded-4xl"
+            src="/introimaxeam.webm"
+          />
+          <div className="pl-5 pt-5">
+            <LottieAnim animationData={animationData} />
+          </div>
+        </div>
       </div>
     </section>
   );

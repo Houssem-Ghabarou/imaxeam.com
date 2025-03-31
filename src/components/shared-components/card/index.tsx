@@ -84,7 +84,7 @@ const Card: React.FC<CardProps> = ({
 
           {/* Button and Icon */}
           <div
-            className={`flex items-center gap-4 ${
+            className={`flex flex-col md:flex-row mt-2  items-start md:items-center gap-4 ${
               icon && button ? "justify-between" : "justify-end"
             }`}
           >

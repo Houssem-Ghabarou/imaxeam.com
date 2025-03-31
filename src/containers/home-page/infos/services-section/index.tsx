@@ -4,10 +4,16 @@ import Card from "@/components/shared-components/card";
 import UnmatchedServices from "@/components/shared-components/unmatchedservices";
 import { forwardRef } from "react";
 import { servicesCardDataDesktop } from "@/data/servicesCardDataDesktop";
-
+import { useRouter } from "next/navigation";
 const ServicesSection = forwardRef<HTMLDivElement>((_, ref) => {
+  const router = useRouter(); // Initialize router
   const navigateToWebsite = (website: string) => {
     window.open(website);
+  };
+  const goTo = (path: string | undefined) => {
+    if (path) {
+      router.push(path);
+    }
   };
 
   return (
@@ -32,13 +38,7 @@ const ServicesSection = forwardRef<HTMLDivElement>((_, ref) => {
         </div>
         <div className="absolute -top-30 right-[-60] w-2/3 grid grid-cols-1 md:grid-cols-2 gap-1">
           {servicesCardDataDesktop?.map((card, index) => (
-            <Card
-              key={index}
-              {...card}
-              onClick={
-                card?.link ? () => navigateToWebsite(card?.link) : undefined
-              }
-            />
+            <Card key={index} {...card} onClick={() => goTo(card?.link)} />
           ))}
         </div>
       </div>

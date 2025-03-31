@@ -13,11 +13,11 @@ const images = [
 
 const InfiniteScroll = () => {
   return (
-    <div className=" pt-4 mx-3 xl:my-12">
+    <div className=" pt-10">
       <div className="overflow-hidden w-full  rounded-2xl py-5">
         <div className="relative flex whitespace-nowrap">
           {/* Ensure seamless looping by duplicating images multiple times */}
-          <div className="scrolling flex min-w-max animate-scroll gap-10">
+          <div className="scrolling flex justify-center  min-w-max animate-scroll gap-10">
             {[...images, ...images, ...images].map((src, index) => (
               <div key={index} className="h-20 w-auto relative flex-shrink-0">
                 <img

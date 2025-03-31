@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 const Contact = () => {
   return (
-    <div className="min-h-screen py-20">
+    <div className="py-20 xl:py-40">
       <GetInTouch />
     </div>
   );

@@ -7,7 +7,7 @@ export const servicesCardDataDesktop = [
     subtitle: "PROVEN MAXIMO ADD-ONS SOLUTIONS",
     textColor: "text-[#017A9B]",
     button: "Learn more",
-    link: "https://maxvs-scheduler.com/",
+    link: "/products/maxvs",
     description:
       "MAXVS is the Maximo visual scheduler for your team. With the integrated visual calendar, Maximo users can view and schedule W.O.and P.M.in a true calendar format. With a simple ‘drag and drop’, your schedule requires no manual entry for changes.",
   },
@@ -33,7 +33,7 @@ export const servicesCardDataDesktop = [
     subtitle: "PROVEN MAXIMO ADD-ONS SOLUTIONS",
     textColor: "text-[#2E834E]",
     button: "Learn more",
-    link: "https://maxls-dataload.com/",
+    link: "/products/maxls",
     description:
       "MAXLS Data Management is the premier essential IBM Maximo add-on product for mass information load. It enables you to import, update, upload and direct edits of asset and MRO specifics. Think Maximo with Excel.",
   },
@@ -46,7 +46,7 @@ export const servicesCardDataDesktop = [
     subtitle: "IBM Maximo Mobile Solution for Your Enterprise",
     textColor: "text-[#7057A5]",
     button: "Learn more",
-    link: "https://maxapps-maximo.com/",
+    link: "/products/maxapps",
     description:
       "MAXapps provides IBM Maximo teams with a flexible tool for generating dynamic mobile applications that can suit any business requirements.",
   },

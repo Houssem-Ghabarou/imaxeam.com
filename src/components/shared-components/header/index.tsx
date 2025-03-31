@@ -65,7 +65,12 @@ const Header = () => {
   return (
     <>
       <nav
-        className={`bg-white-100 fixed z-50 top-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-6 xl:px-8 py-2 xl:py-3 w-[92%] lg:w-[88%] 2xl:w-[80%] mx-auto rounded-[50px] shadow-md mt-5 transition-transform duration-500 ${
+        style={{
+          background: `linear-gradient(113.64deg, rgba(170, 170, 170, 0.1) 22.31%, rgba(252, 119, 50, 0.04) 55.51%, rgba(170, 170, 170, 0.1) 107.22%)`,
+          backdropFilter: "blur(10px)", // Add blur effect
+          WebkitBackdropFilter: "blur(10px)", // For Safari support
+        }}
+        className={` fixed z-50 top-0 left-1/2 transform -translate-x-1/2 flex justify-between items-center px-6 xl:px-8 py-2 xl:py-3 w-[92%] lg:w-[88%] 2xl:w-[80%] mx-auto rounded-[50px] shadow-md mt-5 transition-transform duration-500 ${
           isVisible
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0"
@@ -73,9 +78,9 @@ const Header = () => {
       >
         <img
           onClick={() => goTo("/")}
-          src={"imaxeamlogo2.svg.svg"}
+          src={"/imaxeamlogo2.svg"}
           alt="Imaxeam logo and IBM logo"
-          className="cursor-pointer"
+          className="cursor-pointer  w-[150] "
         />
 
         {/* Desktop Nav Links */}
@@ -93,13 +98,14 @@ const Header = () => {
             </li>
             <li className="relative group">
               <span
-                className={`li-custom-nav ${
-                  pathname === "/products"
+                className={`flex gap-2 li-custom-nav ${
+                  pathname.includes("products")
                     ? "underline underline-offset-8 decoration-orange-100 decoration-[2px] mt-1 text-orange-100"
                     : ""
                 }`}
               >
-                Products & Services
+                <div> Services</div>
+                <img src="/selector.svg" alt="arrow down" width={10} />
               </span>
               {/* Wrap the dropdown in a div to maintain hover */}
               <div className="absolute hidden group-hover:block hover:block">
@@ -193,14 +199,7 @@ const Header = () => {
             >
               Home
             </li>
-            <li
-              className={`li-custom-nav text-white-100 ${
-                pathname === "/projects" ? "underline font-bold" : ""
-              }`}
-              onClick={handleProductsClick}
-            >
-              Products & Services
-            </li>
+
             <li
               className={`li-custom-nav text-white-100 ${
                 pathname === "/projects" ? "underline font-bold" : ""

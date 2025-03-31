@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 const AboutUs = () => {
   return (
-    <div className="min-h-screen  flex flex-col gap-10  py-40  ">
+    <div className="min-h-screen  flex flex-col gap-10  py-25  lg:py-40  ">
       <InfoSection aboutus={true} />
       <InfiniteScroll />
       <AboutUsImaxeam />
