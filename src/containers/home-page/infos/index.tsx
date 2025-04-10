@@ -45,7 +45,7 @@ const Infos = () => {
             borderRadius: "15px",
             // height: "700px",
           }}
-          className="py-10 mb-10 h-full mx-6 px-6"
+          className="py-10 mb-10 h-full mx-2 "
         >
           <UnmatchedServices />
           <EmblaCarousel options={OPTIONS} slides={servicesCardData} />

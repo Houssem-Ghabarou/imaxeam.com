@@ -23,10 +23,10 @@ const AboutUsImaxeam = () => {
           </p>
         </div>
         <div className=" hidden  xl:inline  absolute xl:right-100 2xl:right-130">
-          <img src="/aboutus0.svg" width={300} />
+          <img src="/aboutus0.svg" width={300} alt="aboutus" />
         </div>
         <div className=" hidden xl:inline  absolute xl:right-20 2xl:right-48 top-[-180]">
-          <img src="/aboutus1.svg" width={300} />
+          <img src="/aboutus1.svg" width={300} alt="aboutus1" />
         </div>
       </div>
       <div className="px-6 xl:px-20 2xl:px-40  flex   flex-row-reverse justify-between items-center gap-20 relative xl:mt-30 xl:mb-10 ">
@@ -35,10 +35,10 @@ const AboutUsImaxeam = () => {
         </div> */}
         {/*  abouts 2 3*/}
         <div className=" hidden xl:inline  absolute xl:left-20 2xl:left-45 top-[-180]">
-          <img src="/aboutus2.svg" width={300} />
+          <img src="/aboutus2.svg" width={300} alt="aboutus2" />
         </div>
         <div className=" hidden xl:inline  absolute xl:left-100 2xl:left-125">
-          <img src="/aboutus3.svg" width={300} />
+          <img src="/aboutus3.svg" width={300} alt="aboutus3" />
         </div>
         <div
           className="xl:w-[50%] 2xl:w-[55%]  flex flex-col gap-4 rounded-2xl p-8 pl-30"

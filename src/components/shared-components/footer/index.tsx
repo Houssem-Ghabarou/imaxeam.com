@@ -1,7 +1,16 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year
+  const router = useRouter();
+  const handleEULA = () => {
+    router.push("/eula");
+  };
+  const handlePrivacyPolicy = () => {
+    router.push("/privacy-policy");
+  };
 
   return (
     <footer className="bg-[#222222] flex flex-col px-10 md:px-40 lg:px-30 xl:px-50 2xl:px-90 py-5">
@@ -37,16 +46,48 @@ const Footer = () => {
         <div className="text-nowrap flex flex-col gap-2 text-center md:text-left">
           <div className="text-orange-100 text-xs md:text-sm">
             Select Partners{" "}
-            <span className="underline text-white-100">JFC</span>
-          </div>
-          <div className="text-orange-100 text-xs md:text-sm">
-            Read Our{" "}
-            <span className="underline text-white-100">
-              EULA, Privacy Policy
+            <span
+              className="underline text-white-100 cursor-pointer"
+              onClick={() =>
+                window.open("https://www.jfc-associates.com/", "_blank")
+              }
+            >
+              JFC
             </span>
           </div>
           <div className="text-orange-100 text-xs md:text-sm">
-            Visit <span className="underline text-white-100">Sitemap</span>
+            Read Our{" "}
+            <span className=" text-white-100">
+              <span
+                className="underline cursor-pointer"
+                onClick={() => {
+                  handleEULA();
+                }}
+              >
+                EULA
+              </span>{" "}
+              <span className="text-orange-100">,</span>
+              <span
+                className="underline cursor-pointer"
+                onClick={() => {
+                  handlePrivacyPolicy();
+                }}
+              >
+                {" "}
+                Privacy Policy
+              </span>
+            </span>
+          </div>
+          <div className="text-orange-100 text-xs md:text-sm">
+            Visit{" "}
+            <span
+              className="underline text-white-100 cursor-pointer"
+              onClick={() => {
+                router.push("/sitemap.xml");
+              }}
+            >
+              Sitemap
+            </span>
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ const ProductHighlight = () => {
         }}
       ></div>
       <div className="hidden xl:inline -mt-[130px] w-[100%] xl:w-[50%]">
-        <img src="/maxapps.svg" className="" />
+        <img src="/maxapps.svg" className="" alt="maxapps" />
       </div>
       <div className="w-[100%] px-10 xl:px-0 xl:w-[50%] py-5 xl:py-15 flex flex-col justify-center gap-2 xl:gap-6 ">
         <div className=" text-2xl xl:text-[50px] text-white-100 font-[600]  xl:w-[70%]">
@@ -63,7 +63,7 @@ const ProductHighlight = () => {
         </div>
       </div>
       <div className=" xl:hidden -mt-[90px] ml-[43px] w-[100%] xl:w-[50%]">
-        <img src="/maxapps.svg" className="" />
+        <img src="/maxapps.svg" className="" alt="maxapps" />
       </div>
     </div>
   );

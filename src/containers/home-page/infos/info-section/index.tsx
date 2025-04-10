@@ -44,7 +44,7 @@ const InfoSection = ({ displayreverse, aboutus }: InfoSectionProps) => {
           With over a decade of expertise, we have been empowering businesses
           with comprehensive{" "}
           <span className="font-bold">Maximo solutions—from</span> seamless
-          <span className="font-bold">integrations</span> and{" "}
+          <span className="font-bold"> integrations</span> and{" "}
           <span className="font-bold">managed services</span> to our flagship
           products designed to <span className="font-bold">enhance</span>{" "}
           performance, efficiency, and scalability.
@@ -57,13 +57,21 @@ const InfoSection = ({ displayreverse, aboutus }: InfoSectionProps) => {
           </span>
           .
         </p>
-        <img
-          src="/imaxeamwhitelogo.svg"
-          alt="iMaxeam"
-          color="red"
-          className="w-[250px] xl:w-[400px]"
-          style={{ maxHeight: "none" }}
-        />
+        {aboutus ? (
+          <img
+            src="/aboutuslogo.svg"
+            alt="About Us Logo"
+            className="w-[250px] xl:w-[400px]"
+            style={{ maxHeight: "none" }}
+          />
+        ) : (
+          <img
+            src="/imaxeamwhitelogo.svg"
+            alt="iMaxeam"
+            className="w-[250px] xl:w-[400px]"
+            style={{ maxHeight: "none" }}
+          />
+        )}
       </div>
       {/* Image with absolute positioning and no size constraints */}
       <div

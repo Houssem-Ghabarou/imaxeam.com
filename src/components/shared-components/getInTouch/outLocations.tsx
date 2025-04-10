@@ -1,4 +1,4 @@
-//@ts-ignore
+//@ts-expect-error
 import Flag from "react-world-flags";
 
 interface LocationProps {
@@ -39,7 +39,7 @@ export default function OurLocations() {
         {/* Map Section */}
         <div className="w-full md:w-1/2 relative h-full">
           <img
-            src="/map.svg"
+            src="/worldmap.png"
             alt="Office locations map"
             className="w-full h-full object-cover"
           />

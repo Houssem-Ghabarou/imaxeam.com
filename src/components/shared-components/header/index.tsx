@@ -210,6 +210,31 @@ const Header = () => {
             </li>
             <li
               className={`li-custom-nav text-white-100 ${
+                pathname === "/products/maxls" ? "underline font-bold" : ""
+              }`}
+              onClick={() => goTo("/products/maxls")}
+            >
+              MAXLS
+            </li>
+            <li
+              className={`li-custom-nav text-white-100 ${
+                pathname === "/products/maxvs" ? "underline font-bold" : ""
+              }`}
+              onClick={() => goTo("/products/maxvs")}
+            >
+              MAXVS
+            </li>
+            <li
+              className={`li-custom-nav text-white-100 ${
+                pathname === "/products/maxapps" ? "underline font-bold" : ""
+              }`}
+              onClick={() => goTo("/products/maxapps")}
+            >
+              MAXAPPS
+            </li>
+
+            <li
+              className={`li-custom-nav text-white-100 ${
                 pathname === "/about-us" ? "underline font-bold" : ""
               }`}
               onClick={() => goTo("/about-us")}

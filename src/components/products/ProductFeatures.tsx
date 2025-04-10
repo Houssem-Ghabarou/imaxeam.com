@@ -19,7 +19,7 @@ const ProductFeatures = () => {
   console.log(mode, "mode");
 
   return (
-    <div className=" px-6 lg:px-20 2xl:px-40 w-full xl:my-20">
+    <div className=" px-3 lg:px-20 2xl:px-40 w-full xl:my-35">
       <div
         className="flex flex-col xl:flex-row   xlgap-8 rounded-2xl"
         style={{

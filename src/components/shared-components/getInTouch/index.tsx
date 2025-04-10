@@ -11,6 +11,7 @@ import LottieAnim from "../lottie/LottieAnim";
 import emailAnimation from "@/assets/Get in touch/Email.json";
 import phoneAnimation from "@/assets/Get in touch/Phone.json";
 import calendarAnimation from "@/assets/Get in touch/Calendar.json";
+
 type FormState = {
   name: string;
   email: string;
@@ -201,7 +202,7 @@ export default function GetInTouch() {
         </div>
 
         {selectedCountry && (
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="flex items-center">
               <div
                 className="w-15 h-15 rounded-full flex items-center justify-center mr-4"
@@ -215,7 +216,7 @@ export default function GetInTouch() {
               <p className="text-gray-700">{selectedCountry.email}</p>
             </div>
 
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <div
                 className="w-15 h-15 rounded-full  flex items-center justify-center mr-4"
                 style={{
@@ -226,7 +227,7 @@ export default function GetInTouch() {
                 <LottieAnim animationData={phoneAnimation} />
               </div>
               <p className="text-gray-700">{selectedCountry.phone}</p>
-            </div>
+            </div> */}
 
             <div className="flex items-center">
               <div
@@ -240,9 +241,6 @@ export default function GetInTouch() {
               </div>
               <div>
                 <p className="text-gray-700">{selectedCountry.hours}</p>
-                <p className="text-xs text-gray-500">
-                  ({selectedCountry.timezone})
-                </p>
               </div>
             </div>
           </div>
@@ -250,7 +248,7 @@ export default function GetInTouch() {
       </div>
 
       <div className="flex flex-col gap-4 xl:gap-4 w-full lg:w-[50%] p-10 rounded-xl bg-white/70 bg-gradient-to-bl from-gray-200/10 via-[#FC7732]/20 to-gray-200/10 backdrop-blur-[17.5px]">
-        <div className="font-[600] font-[35px] ">Your Details</div>
+        <div className="font-[600] text-[25px] ">Your Details</div>
         <form
           className="flex flex-col gap-8 xl:w-[80%] "
           onSubmit={handleSubmit}
@@ -276,10 +274,9 @@ export default function GetInTouch() {
 
           <div className="space-y-2">
             <div className="text-black-300">Company</div>
-
             <input
               type="text"
-              name="Company"
+              name="company" // Changed from "Company" to "company"
               placeholder="Company Name"
               value={formState.company}
               onChange={handleChange}
@@ -289,6 +286,7 @@ export default function GetInTouch() {
               } p-3 outline-none w-full focus:ring-0 placeholder:text-[#B3B3B3]`}
               aria-invalid={errors.company ? "true" : "false"}
             />
+
             {errors.company && (
               <p className="text-red-500 text-sm">{errors.company}</p>
             )}

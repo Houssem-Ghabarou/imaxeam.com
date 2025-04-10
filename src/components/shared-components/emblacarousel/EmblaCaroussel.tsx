@@ -4,7 +4,7 @@ import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Card from "../card";
-
+import { useRouter } from "next/navigation";
 type SlideType = {
   minheight?: string;
   shadow?: string;
@@ -19,6 +19,7 @@ type SlideType = {
   description?: string;
   src?: string;
   index?: number;
+  link?: string;
 };
 
 type PropType = {
@@ -27,6 +28,11 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
+  const router = useRouter();
+  const navigateToPath = (Path: string) => {
+    router.push(Path);
+  };
+
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
@@ -52,7 +58,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((cardProps, index) => {
             return (
               <div className="embla__slide" key={index}>
-                <Card {...cardProps} />
+                <Card
+                  {...cardProps}
+                  onClick={() => {
+                    if (cardProps?.onClick) {
+                      cardProps?.onClick();
+                    } else if (cardProps?.link) {
+                      navigateToPath(cardProps?.link);
+                    }
+                  }}
+                />
               </div>
             );
           })}

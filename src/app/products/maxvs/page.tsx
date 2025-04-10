@@ -1,5 +1,8 @@
 import HeroSection from "@/components/products/HeroSection";
+import MaxvsFeatures from "@/components/products/MaxvsFeatures";
 import ProductHighlight from "@/components/products/ProductHighlight";
+import GetInTouch from "@/components/shared-components/getInTouch";
+import OurLocations from "@/components/shared-components/getInTouch/outLocations";
 import InfiniteScroll from "@/containers/home-page/hero-section/infinite-scroll";
 import React from "react";
 
@@ -74,6 +77,9 @@ const Maxvs = () => {
         image="/maxvshighlight.svg"
         title="MAXLS : A MAXIMO Calendar Schedular"
       />
+      <MaxvsFeatures />
+      <GetInTouch />
+      <OurLocations />
     </div>
   );
 };

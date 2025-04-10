@@ -19,9 +19,9 @@ const MaxappsFeatures = () => {
   console.log(mode, "mode");
 
   return (
-    <div className=" px-6 lg:px-20 2xl:px-40 w-full xl:my-15 xl:mb-45">
+    <div className="px-3 lg:px-20 2xl:px-40 my-10 w-full  xl:mt-20 xl:mb-75">
       <div
-        className="flex flex-col xl:flex-row   xlgap-8 rounded-2xl"
+        className="flex flex-col xl:flex-row   xl:gap-8 rounded-2xl"
         style={{
           background:
             "linear-gradient(96.24deg, rgba(170, 170, 170, 0.1) -14.9%, rgba(112, 87, 165, 0.2) 72.03%, rgba(170, 170, 170, 0.1) 107.44%)",

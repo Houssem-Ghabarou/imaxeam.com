@@ -33,7 +33,7 @@ const ProductHighlight = ({
       className={`flex flex-col xl:flex-row   mt-20 xl:mt-0`}
     >
       <div className="-mt-[120px] self-center xl:self-start xl:-mt-[70px]  min-[1800px]:w-[52%] ">
-        <img src={image} className="object-fit " />
+        <img src={image} className="object-fit " alt="producthighlight" />
       </div>
       <div className=" w-[100%] xl:w-[55%]  px-6 xl:px-10 pt-1 xl:pt-15 flex flex-col gap-6">
         <div className="text-[20px] text-white-100 font-[600] ">{title}</div>
