@@ -75,7 +75,7 @@ const Maxvs = () => {
         underlineColor="#017A9B"
         bgColor="linear-gradient(135deg, #195A70 0%, #24A3CC 100%)"
         image="/maxvshighlight.svg"
-        title="MAXLS : A MAXIMO Calendar Schedular"
+        title="MAXVS : A MAXIMO Calendar Schedular"
       />
       <MaxvsFeatures />
       <GetInTouch />
