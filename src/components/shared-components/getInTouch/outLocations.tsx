@@ -1,5 +1,5 @@
-//@ts-expect-error
-import Flag from "react-world-flags";
+import ReactCountryFlag from "react-country-flag";
+// import Flag from "react-world-flags";
 
 interface LocationProps {
   country: string;
@@ -26,8 +26,8 @@ const locations: LocationProps[] = [
     flag: "🇨🇲",
     code: "cm",
     address: [
-      "Acien College des Nations-Bonaparte",
-      "BP: 16295 Douala -Cameroon",
+      "Ancien Collège des nations Avenue des palmiers - Bonapriso",
+      "Douala- Cameroon",
     ],
   },
 ];
@@ -56,12 +56,33 @@ export default function OurLocations() {
 
           <div className="space-y-6">
             {locations.map((location, index) => (
-              <div key={index} className="flex items-start">
-                <div className=" w-10 h-10 xl:w-20 xl:h-20 rounded-full overflow-hidden flex items-center justify-center mr-4  shadow-sm">
-                  {/* <span className="text-3xl">{location.flag}</span> */}
-                  <Flag code={location?.code} fallback={<span>Unknown</span>} />
+              <div key={index} className="flex items-start group">
+                <div className="flex items-center justify-center mr-4">
+                  <div
+                    className="w-12 h-12 xl:w-20 xl:h-20 rounded-full overflow-hidden bg-gray-50 
+                              flex items-center justify-center border-2 border-gray-100 
+                              shadow-sm transition-all duration-300 
+                              group-hover:shadow-md group-hover:border-gray-200"
+                  >
+                    <div
+                      className="w-10 h-10 xl:w-16 xl:h-16 rounded-full overflow-hidden 
+                                  flex items-center justify-center bg-white"
+                    >
+                      <ReactCountryFlag
+                        countryCode={location.code}
+                        svg
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "50%",
+                          border: "none",
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div>
+                <div className="space-y-1 pt-2">
                   {location.address.map((line, i) => (
                     <p key={i} className="text-gray-700">
                       {line}

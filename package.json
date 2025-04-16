@@ -9,7 +9,6 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "buildandsitemap": "npm run build && npm run postbuild"
-
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -22,6 +21,7 @@
     "next": "15.2.0",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
+    "react-country-flag": "^3.1.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-spinners": "^0.15.0",

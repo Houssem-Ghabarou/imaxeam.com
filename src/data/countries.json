@@ -5,16 +5,16 @@
     "flag": "🇨🇦",
     "email": "info@imaxeam.com",
     "phone": "+123 456 7890",
-    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "hours": "Monday – Friday | 8 AM – 8 PM",
     "timezone": "Your Time Zone"
   },
   {
     "name": "Tunisia",
     "code": "TN",
-    "flag": "tn",
+    "flag": "🇹🇳",
     "email": "info@imaxeam.com",
     "phone": "+1 800 555 1234",
-    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "hours": "Monday – Friday | 8 AM – 8 PM",
     "timezone": "Your Time Zone"
   },
   {
@@ -23,7 +23,7 @@
     "flag": "🇦🇪",
     "email": "info@imaxeam.com",
     "phone": "+971 50 123 4567",
-    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "hours": "Monday – Friday | 8 AM – 8 PM",
     "timezone": "Your Time Zone"
   },
   {
@@ -32,7 +32,7 @@
     "flag": "🇨🇲",
     "email": "info@imaxeam.com",
     "phone": "+237 6 789 0123",
-    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "hours": "Monday – Friday | 8 AM – 8 PM",
     "timezone": "Your Time Zone"
   },
   {
@@ -41,7 +41,7 @@
     "flag": "🇫🇷",
     "email": "info@imaxeam.com",
     "phone": "+33 1 23 45 67 89",
-    "hours": "Monday – Friday | 9 AM – 6 PM",
+    "hours": "Monday – Friday | 8 AM – 8 PM",
     "timezone": "Your Time Zone"
   }
 ]
