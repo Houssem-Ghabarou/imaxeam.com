@@ -5,6 +5,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import DynamicButton from "../Buttons/dynamicButton";
 import { FiMenu } from "react-icons/fi";
 import { TfiClose } from "react-icons/tfi";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 const Header = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
@@ -163,6 +164,8 @@ const Header = () => {
             >
               About Us
             </li>
+            <LocaleSwitcher />
+
             <li onClick={handleContactClick}>
               <DynamicButton
                 fontSize="text-base"

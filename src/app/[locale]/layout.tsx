@@ -7,8 +7,9 @@ import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
 import { MoonLoader } from "react-spinners";
 import "keen-slider/keen-slider.min.css";
-import KeenSlider from "keen-slider";
-
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "../../../i18n/routing";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -24,30 +25,39 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${poppins.variable} antialiased`}>
-        <Suspense
-          fallback={
-            <div className="flex items-center justify-center min-h-screen">
-              <MoonLoader color="#f26822" />
-            </div>
-          }
-        >
-          {/* Header */}
-          <Header />
-          <main className="w-full min-h-[calc(100vh-150px)] flex flex-col">
-            {children}
-          </main>
-          {/* Footer */}
-          <Footer />
-        </Suspense>
-        <ToastContainer />
+        <NextIntlClientProvider>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center min-h-screen">
+                <MoonLoader color="#f26822" />
+              </div>
+            }
+          >
+            {/* Header */}
+            <Header />
+            <main className="w-full min-h-[calc(100vh-150px)] flex flex-col">
+              {children}
+            </main>
+            {/* Footer */}
+            <Footer />
+          </Suspense>
+          <ToastContainer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

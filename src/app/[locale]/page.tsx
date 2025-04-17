@@ -9,8 +9,11 @@ import Infos from "@/containers/home-page/infos";
 import TrustSection from "@/containers/home-page/trust-section";
 import OurLocations from "@/components/shared-components/getInTouch/outLocations";
 import { CookieConsent } from "@/components/shared-components/cookies/cookie-consent";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("HomePage");
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const infosRef = useRef<HTMLDivElement>(null);
